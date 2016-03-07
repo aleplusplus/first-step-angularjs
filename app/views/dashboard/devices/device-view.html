@@ -1,0 +1,149 @@
+<div>
+    <snap-content snap-opt-tap-to-close="false">
+
+        <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+			<span class="menutoggle">
+				<i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+				<i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+			</span>
+        </a>
+
+        <div class="fr">
+            <h2>Device</h2>
+        </div>
+        <span class="glyphicon glyphicon-device bg-fade"></span>
+        <div class="jumbotron">
+            <div class="container">
+                <p>
+                    <a class="btn btn-primary btn-lg btn-white" ui-sref="editDevice({id:device.id})">Edit</a>
+                </p>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="albumImage">
+                            <img ng-src="{{mainImageUrl}}"/>
+                        </div>
+                    </div><!-- End of Column -->
+                    <div class="col-md-3">
+                        <div class="wrapper">
+                            <ul class="list">
+                                <li ng-repeat="img in device.images" ng-click="setImage(img)">
+                                    <img ng-src="{{img}}"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h1>{{device.name}}</h1>
+
+                <p>{{device.description}}</p>
+
+                <ul class="specs">
+                    <li>
+                        <span>Availability and Networks</span>
+                        <dl>
+                            <dt>Availability</dt>
+                            <dd ng-repeat="availability in device.availability">{{availability}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Battery</span>
+                        <dl>
+                            <dt>Type</dt>
+                            <dd>{{device.battery.type}}</dd>
+                            <dt>Talk Time</dt>
+                            <dd>{{device.battery.talkTime}}</dd>
+                            <dt>Standby time (max)</dt>
+                            <dd>{{device.battery.standbyTime}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Storage and Memory</span>
+                        <dl>
+                            <dt>RAM</dt>
+                            <dd>{{device.storage.ram}}</dd>
+                            <dt>Internal Storage</dt>
+                            <dd>{{device.storage.flash}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Connectivity</span>
+                        <dl>
+                            <dt>Network Support</dt>
+                            <dd>{{device.connectivity.cell}}</dd>
+                            <dt>WiFi</dt>
+                            <dd>{{device.connectivity.wifi}}</dd>
+                            <dt>Bluetooth</dt>
+                            <dd>{{device.connectivity.bluetooth}}</dd>
+                            <dt>Infrared</dt>
+                            <dd>{{device.connectivity.infrared}}</dd>
+                            <dt>GPS</dt>
+                            <dd>{{device.connectivity.gps}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Android</span>
+                        <dl>
+                            <dt>OS Version</dt>
+                            <dd>{{device.android.os}}</dd>
+                            <dt>UI</dt>
+                            <dd>{{device.android.ui}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Size and Weight</span>
+                        <dl>
+                            <dt>Dimensions</dt>
+                            <dd ng-repeat="dim in device.sizeAndWeight.dimensions">{{dim}}</dd>
+                            <dt>Weight</dt>
+                            <dd>{{device.sizeAndWeight.weight}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Display</span>
+                        <dl>
+                            <dt>Screen size</dt>
+                            <dd>{{device.display.screenSize}}</dd>
+                            <dt>Screen resolution</dt>
+                            <dd>{{device.display.screenResolution}}</dd>
+                            <dt>Touch screen</dt>
+                            <dd>{{device.display.touchScreen}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Hardware</span>
+                        <dl>
+                            <dt>CPU</dt>
+                            <dd>{{device.hardware.cpu}}</dd>
+                            <dt>USB</dt>
+                            <dd>{{device.hardware.usb}}</dd>
+                            <dt>Audio / headphone jack</dt>
+                            <dd>{{device.hardware.audioJack}}</dd>
+                            <dt>FM Radio</dt>
+                            <dd>{{device.hardware.fmRadio}}</dd>
+                            <dt>Accelerometer</dt>
+                            <dd>{{device.hardware.accelerometer}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Camera</span>
+                        <dl>
+                            <dt>Primary</dt>
+                            <dd>{{device.camera.primary}}</dd>
+                            <dt>Features</dt>
+                            <dd>{{device.camera.features.join(', ')}}</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <span>Additional Features</span>
+                        <dd>{{device.additionalFeatures}}</dd>
+                    </li>
+                </ul>
+
+                <p>
+                    <a class="btn btn-primary btn-lg btn-white" ui-sref="editDevice({id:device.id})">Edit</a>
+                </p>
+            </div>
+        </div>
+    </snap-content>
+</div>

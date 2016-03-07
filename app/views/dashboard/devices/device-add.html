@@ -1,0 +1,23 @@
+<div>
+    <snap-content snap-opt-tap-to-close="false">
+
+        <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+			<span class="menutoggle">
+				<i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+				<i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+			</span>
+        </a>
+
+        <div class="fr">
+            <h2>Device</h2>
+        </div>
+        <span class="glyphicon glyphicon-phone bg-fade"></span>
+        <div class="jumbotron">
+            <div class="container">
+                <form class="form-horizontal" role="form" ng-submit="addDevice()">
+                    <div ng-include="'../views/dashboard/devices/_form.html'"></div>
+                </form>
+            </div>
+        </div>
+    </snap-content>
+</div>

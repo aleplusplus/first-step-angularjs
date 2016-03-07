@@ -1,0 +1,38 @@
+<div>
+	<snap-drawer>
+        <div class="snap-menu">
+            <div class="sidebar-header text-center">
+                <img src="../../../img/minio-avatar.png" alt="" class="sidebar-img img-circle">
+            </div>
+            <ul class="snap-ul">
+                <li ng-class="{active: $state.includes('devices')}"><a ui-sref="devices">DEVICES</a></li>
+                <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
+                <li><a ui-sref="login">LOGOUT</a></li>
+            </ul>
+        </div>
+    </snap-drawer>
+    <snap-dragger></snap-dragger>
+	<snap-content class="bg-dark">
+		
+		<a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+			<span class="menutoggle">
+				<i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+				<i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+			</span>
+		</a>
+
+		<div class="fr">
+			<h2>Reports</h2>
+		</div>
+		<span class="glyphicon glyphicon-dashboard bg-fade"></span>
+		<div class="jumbotron">
+			<div class="container">
+				<p>
+					<a ui-sref="devices" class="btn btn-primary btn-lg btn-white">Back to Devices</a>
+				</p>
+				<h1>Add Charts here</h1>
+				<p>You can use C3.js or Chart.js</p>
+			</div>
+		</div>
+	</snap-content>
+</div>
